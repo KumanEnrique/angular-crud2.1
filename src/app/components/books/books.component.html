@@ -1,0 +1,58 @@
+<div class="row">
+    <div class="col-lg-4 col-md-6 col-sm-12  mb-3" *ngFor="let book of booksArray">
+        <div class="card text-center">
+            <div class="card-header">
+                <h3>{{book.title}}</h3>
+                <h3>{{book.author}}</h3>
+                <h3>{{book.genre}}</h3>
+            </div>
+            <div class="card-body">
+                <h3>{{book.editorial}}</h3>
+                <h3>{{book.year}}</h3>
+                <h3>{{book.ISBN}}</h3>
+                <button class="btn btn-warning" (click)="deleteBook(book)">Borrar</button>
+                <button class="btn btn-secondary" (click)="editBook(book)">Editar</button>
+            </div>
+            <div class="card-footer" *ngIf="book.show">
+                <div class="mb-3">
+                    <input type="text" name="id" [(ngModel)]="editingBook.id" class="form-control" readonly placeholder="{{book.id}}">
+                </div>
+                <div class="mb-3">
+                    <input type="text" name="title" class="form-control" [(ngModel)]="editingBook.title" placeholder="{{book.title}}">
+                </div>
+                <div class="mb-3">
+                    <input type="text" name="author" [(ngModel)]="editingBook.author" class="form-control" placeholder="{{book.author}}">
+                </div>
+                <div class="mb-3">
+                    <input type="text" name="genre" [(ngModel)]="editingBook.genre" class="form-control" placeholder="{{book.genre}}">
+                </div>
+                <div class="mb-3">
+                    <input type="text" name="editorial" [(ngModel)]="editingBook.editorial" class="form-control" placeholder="{{book.editorial}}">
+                </div>
+                <div class="mb-3">
+                    <input type="text" name="ISBN" [(ngModel)]="editingBook.ISBN" class="form-control" placeholder="{{book.ISBN}}">
+                </div>
+                <div class="mb-3">
+                    <input type="text" name="year" [(ngModel)]="editingBook.year" class="form-control" placeholder="{{book.year}}">
+                </div>
+                <button class="btn btn-success btn-lg" (click)="updateBook()">Actualizar</button>
+            </div>
+        </div>
+    </div>
+</div>
+
+<!-- <div class="col-lg-4 col-md-6 col-sm-12">
+    <div class="card text-center">
+        <div class="card-header">
+            <h3>{{book.title}}</h3>
+            <h3>{{book.author}}</h3>
+            <h3>{{book.genre}}</h3>
+        </div>
+        <div class="card-body">
+            <h3>{{book.editorial}}</h3>
+            <h3>{{book.year}}</h3>
+            <h3>{{book.ISBN}}</h3>
+            <button class="btn btn-warning">Borrar</button>
+        </div>
+    </div>
+</div> -->
